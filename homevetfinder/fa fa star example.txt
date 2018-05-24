@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+<!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.checked {
+    color: orange;
+}
+</style>
+<p>
+<script>
+changed1 = false;
+changed2 = false;
+changed3 = false;
+changed4 = false;
+changed5 = false;
+</script>
+<button id="MyButton1" onclick="myFunction1()"><i class="fa fa-star">
+</i></button>
+<button id="MyButton2" onclick="myFunction2()"><i class="fa fa-star">
+</i></button>
+<button id="MyButton3" onclick="myFunction3()"><i class="fa fa-star">
+</i></button>
+<button id="MyButton4" onclick="myFunction4()"><i class="fa fa-star">
+</i></button>
+<button id="MyButton5" onclick="myFunction5()"><i class="fa fa-star">
+</i></button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction1() {
+	if ( changed1 == false)
+    document.getElementById("MyButton1").innerHTML = "<i class='fa fa-star checked'></i>"
+    else
+	 document.getElementById("MyButton1").innerHTML = "<i class='fa fa-star'></i>";
+     document.getElementById("MyButton2").innerHTML = "<i class='fa fa-star'></i>";
+     document.getElementById("MyButton3").innerHTML = "<i class='fa fa-star'></i>";
+     document.getElementById("MyButton4").innerHTML = "<i class='fa fa-star'></i>";
+     document.getElementById("MyButton5").innerHTML = "<i class='fa fa-star'></i>";
+     if (changed1 == false)
+     changed1 = true
+     else
+     changed1 = false
+}
+function myFunction2() {
+	
+	if ( changed2 == false)
+    {
+    document.getElementById("MyButton2").innerHTML = "<i class='fa fa-star checked'></i>";
+    document.getElementById("MyButton1").innerHTML = "<i class='fa fa-star checked'></i>";
+    changed1 = true
+    }
+    
+    else
+	 document.getElementById("MyButton2").innerHTML = "<i class='fa fa-star'></i>";
+     if (changed2 == false)
+     changed2 = true
+     else
+     changed2 = false
+}
+</script>
+
+</body>
+</html>

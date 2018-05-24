@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Client Sign In Form</title>
+  	 <link rel="stylesheet" type="text/css" href="style.css"> 
+    	 <link rel="stylesheet" type="text/css" href="clientloginstyle.css">	
+    	 <script>
+
+	function myFunction() {
+  
+    		 document.getElementById("a1").style.backgroundColor = "black";
+			}
+	</script>
+        <style>      
+	      .collapse {          
+	       border-collapse: collapse;
+	       }
+	       
+	       .center {
+	           text-align: center; 
+	       }
+	       
+	       div.border { border-bottom: 1px solid #000; }       
+        </style>
+        <script>
+          function validate(form)
+          {
+            fail = validateUsername(form.username.value)
+            fail += validatePassword(form.password.value)          
+          
+            if (fail == "")     return true
+            else { alert(fail); return false }
+          }
+
+          function validateUsername(field)
+          {
+            if (field == "") 
+            {
+                return "No Username was entered.\n";
+            }                  
+            return "";
+          }
+
+          function validatePassword(field)
+          {
+            if (field == "") 
+            {
+                return "No Password was entered.\n"
+            }                 
+          return "";
+          }  
+        </script>
+  </head>
+  <body>
+  <div class="header">
+<p><img src="images/homevetfinder.png" alt="Picture of a dog and cat" /></p>
+<h1></h1>
+</div>
+
+<div class="navbar" style="clear:both">
+  <a href="index.html">Home</a>
+  <a href="ViewRating.php">View Vet Ratings</a>
+  <a href="logout.php">Logout</a>
+  <div class="dropdown">
+    <button class="dropbtn" onclick="myFunction()">Log In/Sign Up
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="myDropdown">
+      <a href="clientsignup.php">Client Sign Up</a>
+      <a href="clientlogin_form.html">Client Sign In</a>
+      <a href="vetsignup.php">Vet Sign Up</a>
+      <a href="vetlogin_form.html">Vet Sign In</a>      
+    </div>
+    
+    
+    
+  </div> 
+</div>
+
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+  }
+}
+
+
+
+</script>
+    
+  <p>Please fill in this form to sign in to your account.</p>
+
+    <table border="0" cellpadding="2" cellspacing="5" bgcolor="#eeeeee">
+    <th colspan="2" align="center">Client Sign In Form</th>
+
+      <form method="post" action="clientlogin_process.php" 
+      onsubmit = "return validate(this)">
+      
+        <tr>
+            <td><label for="username"><b>User Name</b></label></td>
+            <td><input type="text" maxlength="16" name="username" 
+            title = "User Name" required><br></td>
+        </tr>          
+        <tr>       
+            <td><label for="password"><b>Password</b></label></td>
+            <td><input type="password" maxlength="12" 
+            name="password" title = "Password" required></td>
+        </tr>
+        
+        <tr class = "collapse">    
+            <td><input type="submit" name = "submit" value="Submit"></td>
+            <td><input type="reset" value="Reset"></td>
+        </tr>
+      </form>
+    </table>
+    <div class="footer"> 
+
+<div> <h3>Copyright &copy;2018 Home Vet Finder, Inc., 22 Happy Cat Way, Islip, New York 11554 (631) 555-1212</h3> </div>
+ </div>
+  </body>
+</html>
